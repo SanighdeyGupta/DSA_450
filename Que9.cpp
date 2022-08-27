@@ -45,6 +45,7 @@ int main() {
         for (int i = 0; i < n; i++) {
             cin >> arr[i];
         }
+      
         Solution ob;
         auto ans = ob.getMinDiff(arr, n, k);
         cout << ans << "\n";
