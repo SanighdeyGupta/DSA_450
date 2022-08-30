@@ -1,0 +1,18 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        int n = intervals.size();
+        int i = 0;
+        sort(intervals[0].begin(), intervals[0].end());
+        while(i<(n/2)){
+            if(intervals[i][i+1]>=intervals[i+1][i]){
+                intervals[i][i+1] = intervals[i+1][i+1];
+                swap(intervals[i+1],intervals[n-1]);
+                intervals.pop_back();
+                sort(intervals[0].begin(), intervals[0].end());
+            }
+            i++;
+        }
+        return intervals;
+    }
+};
